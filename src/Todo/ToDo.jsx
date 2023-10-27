@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import "./style.css";
 
-export default function towatch() {//uso de componente//
+export default function toWatch() {//uso de componente//
 
     const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
     //useState define um estado
     //      valor       estado
+    const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
     const [atividade, setAtividade] = useState("");
     const [lista, setLista] = useState( listaLocalStorage || [] );
-    const [id, setId] = useState(1);
 
     useEffect(() => { localStorage.setItem("Lista", JSON.stringify(lista)) }, [lista]);
 
