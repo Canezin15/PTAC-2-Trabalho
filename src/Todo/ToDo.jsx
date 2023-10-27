@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import  {Link} from "react-router-dom"
 import "./style.css";
 
 export default function toWatch() {//uso de componente//
@@ -42,9 +43,12 @@ export default function toWatch() {//uso de componente//
                 <button>ADICIONAR</button>
             </form >
             {lista.map((ativ) =>
-                <div key={ativ.id}>
-                    
+                <div key={ativ.id}> 
+
+                    <Link to={'/detalhe/${ativ.id}'}>
                         <p>{ativ.atividade}</p>
+                    </Link>
+                    
                         <button onClick={() => remover(ativ.id)}>REMOVE</button>
                     
                 </div>
