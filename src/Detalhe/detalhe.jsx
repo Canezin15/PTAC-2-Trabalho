@@ -1,6 +1,5 @@
     import { useParams } from "react-router-dom";
-    import card from './Components/card';
-
+    import Card from '../Components/Card';
 
     export default function Detalhe() {
         
